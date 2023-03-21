@@ -9,7 +9,9 @@ import { useState } from 'react'
 
 function App() {
 
-	const [cart, updateCart] = useState([])
+	const savedCart = localStorage.getItem(`cart`)
+
+	const [cart, updateCart] = useState(savedCart ? JSON.parse(savedCart) : [])
 
 
 	return (
